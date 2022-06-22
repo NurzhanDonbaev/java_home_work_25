@@ -15,7 +15,7 @@ public enum Hand {
         this.name = name;
     }
 
-    public int getV() {
+    public int getValue() {
         return value;
     }
 

@@ -45,25 +45,24 @@ public class Main {
                 Scanner sc = new Scanner(System.in);
                 int userTurn = sc.nextInt();
                 int compTurn = rn.nextInt(5) + 1;
-                System.out.print("Your turn is ");
                 switch (userTurn) {
                     case 1:
-                        System.out.println(rock.getName());
+                        System.out.println("Your turn is " + rock.getName());
                         break;
                     case 2:
-                        System.out.println(paper.getName());
+                        System.out.println("Your turn is " + paper.getName());
                         break;
                     case 3:
-                        System.out.println(scissors.getName());
+                        System.out.println("Your turn is " + scissors.getName());
                         break;
                     case 4:
-                        System.out.println(lizard.getName());
+                        System.out.println("Your turn is " + lizard.getName());
                         break;
                     case 5:
-                        System.out.println(spock.getName());
+                        System.out.println("Your turn is " + spock.getName());
                         break;
                     default:
-                        System.out.println("Wrong case");
+                        System.out.println("Please select shown numbers");
                         break;
                 }
                 System.out.print("Computer selected:  ");
@@ -83,24 +82,24 @@ public class Main {
                     System.out.println(spock.getName());
                 }
                 gameCount++;
-                if (userTurn == rock.getV() && compTurn == rock.getV()
-                        || userTurn == paper.getV() && compTurn == paper.getV()
-                        || userTurn == scissors.getV() && compTurn == scissors.getV()
-                        || userTurn == lizard.getV() && compTurn == lizard.getV()
-                        || userTurn == spock.getV() && compTurn == spock.getV()
+                if (userTurn == rock.getValue() && compTurn == rock.getValue()
+                        || userTurn == paper.getValue() && compTurn == paper.getValue()
+                        || userTurn == scissors.getValue() && compTurn == scissors.getValue()
+                        || userTurn == lizard.getValue() && compTurn == lizard.getValue()
+                        || userTurn == spock.getValue() && compTurn == spock.getValue()
                 ) {
                     drawCount++;
                 }
-                if (userTurn == paper.getV() && compTurn == rock.getV()
-                        || userTurn == paper.getV() && compTurn == spock.getV()
-                        || userTurn == scissors.getV() && compTurn == paper.getV()
-                        || userTurn == scissors.getV() && compTurn == lizard.getV()
-                        || userTurn == rock.getV() && compTurn == scissors.getV()
-                        || userTurn == rock.getV() && compTurn == lizard.getV()
-                        || userTurn == spock.getV() && compTurn == scissors.getV()
-                        || userTurn == spock.getV() && compTurn == rock.getV()
-                        || userTurn == lizard.getV() && compTurn == spock.getV()
-                        || userTurn == lizard.getV() && compTurn == paper.getV()
+                if (userTurn == paper.getValue() && compTurn == rock.getValue()
+                        || userTurn == paper.getValue() && compTurn == spock.getValue()
+                        || userTurn == scissors.getValue() && compTurn == paper.getValue()
+                        || userTurn == scissors.getValue() && compTurn == lizard.getValue()
+                        || userTurn == rock.getValue() && compTurn == scissors.getValue()
+                        || userTurn == rock.getValue() && compTurn == lizard.getValue()
+                        || userTurn == spock.getValue() && compTurn == scissors.getValue()
+                        || userTurn == spock.getValue() && compTurn == rock.getValue()
+                        || userTurn == lizard.getValue() && compTurn == spock.getValue()
+                        || userTurn == lizard.getValue() && compTurn == paper.getValue()
                 ) {
                     userCount++;
                 } else {
@@ -136,19 +135,18 @@ public class Main {
                 Scanner sc = new Scanner(System.in);
                 int userTurn = sc.nextInt();
                 int compTurn = rn.nextInt(3) + 1;
-                System.out.print("Your turn is ");
                 switch (userTurn) {
                     case 1:
-                        System.out.println(rock.getName());
+                        System.out.println("Your turn is " + rock.getName());
                         break;
                     case 2:
-                        System.out.println(paper.getName());
+                        System.out.println("Your turn is " + paper.getName());
                         break;
                     case 3:
-                        System.out.println(scissors.getName());
+                        System.out.println("Your turn is " + scissors.getName());
                         break;
                     default:
-                        System.out.println("Wrong case");
+                        System.out.println("Please select shown numbers");
                         break;
                 }
                 System.out.print("Computer selected:  ");
@@ -162,13 +160,16 @@ public class Main {
                     System.out.println(scissors.getName());
                 }
                 gameCount++;
-                if (userTurn == rock.getV() && compTurn == rock.getV() || userTurn == paper.getV() && compTurn == paper.getV() || userTurn == scissors.getV() && compTurn == scissors.getV()) {
+                if (userTurn == rock.getValue() && compTurn == rock.getValue()
+                        || userTurn == paper.getValue() && compTurn == paper.getValue()
+                        || userTurn == scissors.getValue() && compTurn == scissors.getValue()) {
                     drawCount++;
                 }
-                if (userTurn == paper.getV() && compTurn == rock.getV() || userTurn == scissors.getV() && compTurn == paper.getV() || userTurn == rock.getV() && compTurn == scissors.getV()) {
+                if (userTurn == paper.getValue() && compTurn == rock.getValue()
+                        || userTurn == scissors.getValue() && compTurn == paper.getValue()
+                        || userTurn == rock.getValue() && compTurn == scissors.getValue()) {
                     userCount++;
-                }
-                if (userTurn == scissors.getV() && compTurn == rock.getV() || userTurn == paper.getV() && compTurn == scissors.getV() || userTurn == rock.getV() && compTurn == paper.getV()) {
+                } else {
                     compCount++;
                 }
                 percent = ((userCount * 100) / gameCount);
