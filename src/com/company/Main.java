@@ -7,7 +7,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        getGame();
+        System.out.println("To select easy level press 1, for hard level press 2");
+        Scanner sc = new Scanner(System.in);
+        try {
+            int userChois = sc.nextInt();
+            if (userChois == 1) {
+                getGame();
+            }
+            if (userChois == 2) {
+                getHardGame();
+            } else {
+                System.out.println("Sorry game has only 2 levels");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Possible enter only number format, try again please!");
+        }
     }
 
     public static void getHardGame() {
@@ -30,7 +44,7 @@ public class Main {
             try {
                 Scanner sc = new Scanner(System.in);
                 int userTurn = sc.nextInt();
-                int compTurn = rn.nextInt(3) + 1;
+                int compTurn = rn.nextInt(5) + 1;
                 System.out.print("Your turn is ");
                 switch (userTurn) {
                     case 1:
@@ -61,6 +75,12 @@ public class Main {
                 }
                 if (compTurn == 3) {
                     System.out.println(scissors.getName());
+                }
+                if (compTurn == 4) {
+                    System.out.println(lizard.getName());
+                }
+                if (compTurn == 5) {
+                    System.out.println(spock.getName());
                 }
                 gameCount++;
                 if (userTurn == rock.getV() && compTurn == rock.getV()
